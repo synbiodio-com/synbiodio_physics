@@ -32,8 +32,7 @@ void main() {
 
       expect(oneNanogram * 1000, oneMicrogram);
 
-      expect(oneMilliGram, oneMicrogram);
-
+      expect(oneMilliGram, oneMicrogram * 1000);
     });
   });
 }

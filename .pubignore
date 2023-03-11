@@ -13,6 +13,9 @@ example/
 #
 build/
 
+# exclude coverage
+coverage/
+
 #
 publish.sh
 
