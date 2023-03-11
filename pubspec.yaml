@@ -7,7 +7,7 @@ environment:
   sdk: ">=2.19.0 <3.0.0"
 
 dependencies:
-  meta: ^1.9.0
+  meta: ^1.0.0
 
 dev_dependencies:
   mocktail: ^0.3.0
