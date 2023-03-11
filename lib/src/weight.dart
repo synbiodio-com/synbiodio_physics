@@ -20,7 +20,7 @@ enum WeightUnit {
 
 /// 重量
 @immutable
-class Weight implements Comparable<Weight>{
+class Weight implements Comparable<Weight> {
   /// 重量单位构造函数
   const Weight({
     int kilogram = 0,
@@ -37,7 +37,7 @@ class Weight implements Comparable<Weight>{
         );
 
   /// 空质量
-  const Weight.empty(): _nanogram = 0;
+  const Weight.empty() : _nanogram = 0;
 
   const Weight._nanogram(this._nanogram);
 
@@ -64,14 +64,19 @@ class Weight implements Comparable<Weight>{
 
   final int _nanogram;
 
+  /// 用纳克单位表示
   double get inNanogram => _nanogram.toDouble();
 
+  /// 用微克单位表示
   double get inMicrogram => _nanogram / nanogramsPerMicrogram;
 
+  /// 用毫克单位表示
   double get inMilligram => _nanogram / nanogramsPerMilligram;
 
+  /// 用克单位表示
   double get inGram => _nanogram / nanogramsPerPerGram;
 
+  /// 用千克单位表示
   double get inKilogram => _nanogram / nanogramsPerPerKilogram;
 
   /// 重量相加
