@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 
-/// 重量单位
-enum WeightUnit {
+/// 质量单位
+enum MassUnit {
   /// 纳克
   nanogram,
 
@@ -18,11 +18,11 @@ enum WeightUnit {
   kilogram,
 }
 
-/// 重量
+/// 质量
 @immutable
-class Weight implements Comparable<Weight> {
-  /// 重量单位构造函数
-  const Weight({
+class Mass implements Comparable<Mass> {
+  /// 质量单位构造函数
+  const Mass({
     int kilogram = 0,
     int gram = 0,
     int milligram = 0,
@@ -37,11 +37,11 @@ class Weight implements Comparable<Weight> {
         );
 
   /// 空质量
-  const Weight.empty() : _nanogram = 0;
+  const Mass.empty() : _nanogram = 0;
 
-  const Weight._nanogram(this._nanogram);
+  const Mass._nanogram(this._nanogram);
 
-  /// 每1微克对应1000纳克
+  /// Every 1 microgram corresponds to 1000 nanograms.
   static const int nanogramsPerMicrogram = 1000;
 
   /// 每1毫克对应1000微克
@@ -79,21 +79,21 @@ class Weight implements Comparable<Weight> {
   /// 用千克单位表示
   double get inKilogram => _nanogram / nanogramsPerPerKilogram;
 
-  /// 重量相加
-  Weight operator +(Weight other) => Weight._nanogram(_nanogram + other._nanogram);
+  /// 质量相加
+  Mass operator +(Mass other) => Mass._nanogram(_nanogram + other._nanogram);
 
-  /// 重量相减
-  Weight operator -(Weight other) => Weight._nanogram(_nanogram - other._nanogram);
+  /// 质量相减
+  Mass operator -(Mass other) => Mass._nanogram(_nanogram - other._nanogram);
 
-  /// 重量相减
-  Weight operator *(num factor) => Weight._nanogram((_nanogram * factor).round());
+  /// 质量相减
+  Mass operator *(num factor) => Mass._nanogram((_nanogram * factor).round());
 
-  ///  重量相除， 得到倍数
-  double operator /(Weight other) => _nanogram / other._nanogram;
+  ///  质量相除， 得到倍数
+  double operator /(Mass other) => _nanogram / other._nanogram;
 
   @override
   bool operator ==(Object other) {
-    if (other is! Weight) {
+    if (other is! Mass) {
       return false;
     }
     return _nanogram == other._nanogram;
@@ -108,5 +108,5 @@ class Weight implements Comparable<Weight> {
   }
 
   @override
-  int compareTo(Weight other) => _nanogram.compareTo(other._nanogram);
+  int compareTo(Mass other) => _nanogram.compareTo(other._nanogram);
 }
