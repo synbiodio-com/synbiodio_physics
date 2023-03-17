@@ -1,6 +1,6 @@
 name: synbiodio_physics
 description: The physics of Synbiodio
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/synbiodio-com/sysbiodio_physics
 
 environment:
