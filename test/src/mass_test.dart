@@ -4,7 +4,7 @@ import 'package:synbiodio_physics/synbiodio_physics.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Test Weight', () {
+  group('Test Mass', () {
     test('Test unit conversion', () {
       const weight = Mass(kilogram: 1);
 
